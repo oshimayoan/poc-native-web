@@ -1,39 +1,32 @@
 // @flow
 
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.app}>
-        <View style={styles.appHeader}>
-          <Text style={styles.appTitle}>Welcome to React ⚛️</Text>
-        </View>
-        <Text style={styles.appIntro}>
-          To get started, edit src/App.js and save to reload.
-        </Text>
+import React from 'react';
+import {View, Text, StyleSheet, Platform} from 'react-native';
+import Routing, {Router} from './helpers/routing/';
+import Main from './scenes/Main';
+import Extra from './scenes/Extra';
+
+const Route = Routing.Route;
+const Navigation = Routing.Navigation;
+const Card = Routing.Card;
+
+const App = () =>
+  Platform.OS === 'web' ? (
+    <Router>
+      <View style={{flex: 1}}>
+        <Route exact path="/" component={Main} />
+        <Route path="/extra" component={Extra} />
       </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-  app: {
-    flex: 1,
-  },
-  appHeader: {
-    flex: 1,
-    backgroundColor: '#222',
-    padding: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  appTitle: {
-    fontSize: 16,
-    color: 'white',
-  },
-  appIntro: {
-    flex: 2,
-    fontSize: 30,
-    textAlign: 'center',
-  },
-});
+    </Router>
+  ) : (
+    <Router>
+      <Navigation title="React Native Web">
+        <Card exact path="/" component={Main} />
+        <Card path="/extra" component={Extra} />
+      </Navigation>
+    </Router>
+  );
+
+export default App;
+
+// export {default} from './scenes/Main';
