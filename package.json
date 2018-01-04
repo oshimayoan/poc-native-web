@@ -7,7 +7,11 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-native": "0.51.0",
-    "react-native-web": "^0.3.0-rc.4"
+    "react-native-web": "^0.3.0-rc.4",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-native": "^4.2.0",
+    "react-router-navigation": "^1.0.0-rc.3"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -35,10 +39,11 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["<rootDir>/__mocks__/modulesMock.js"],
+    "setupFiles": [
+      "<rootDir>/__mocks__/modulesMock.js"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
     }
   }
 }
