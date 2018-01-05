@@ -3,7 +3,11 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default class App extends Component<Object> {
+type Props = {
+  history: Object;
+};
+
+export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.app}>
