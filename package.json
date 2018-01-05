@@ -24,6 +24,8 @@
     "eslint-plugin-react": "^7.5.1",
     "flow-bin": "^0.58.0",
     "jest": "^22.0.4",
+    "prettier-eslint": "^8.7.0",
+    "prettier-eslint-cli": "^4.7.0",
     "react-native-scripts": "^1.8.1",
     "react-scripts": "1.0.17",
     "react-test-renderer": "^16.2.0"
@@ -37,10 +39,17 @@
     "eject-native": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
+    "format": "prettier-eslint --write \"src/**/*.js\"",
+    "lint": "eslint . --max-warnings 0",
     "test-src": "jest --coverage",
     "test-watch": "yarn test-src --watch",
-    "test": "yarn typecheck && yarn test-src",
+    "test": "yarn lint && yarn typecheck && yarn test-src",
     "typecheck": "flow"
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "jest": {
     "preset": "react-native",
