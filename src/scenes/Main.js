@@ -2,9 +2,6 @@
 
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import Routing from '../helpers/routing/';
-
-const Link = Routing.Link;
 
 export default class App extends Component<Object> {
   render() {

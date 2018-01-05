@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import {View, Text, StyleSheet, Platform} from 'react-native';
+import {View, Platform} from 'react-native';
 import Routing, {Router} from './helpers/routing/';
 import Main from './scenes/Main';
 import Extra from './scenes/Extra';
